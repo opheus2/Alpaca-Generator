@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function ControlButton({ icon, onClick, data }) {
   const { id, label, selected, color, filename } = data;
   return (
@@ -13,8 +11,7 @@ export default function ControlButton({ icon, onClick, data }) {
             onClick(data);
           }}
           id={id}
-        >
-        </button>
+        ></button>
       ) : (
         <button
           className={`${selected ? "active" : ""} ${

@@ -1,7 +1,6 @@
-import React from "react";
-
 export default function AlpacaImage({ config }) {
-  const { hair, neck, nose, ear, mouth, accessory, leg, eyes, background } = config;
+  const { hair, neck, nose, ear, mouth, accessory, leg, eyes, background } =
+    config;
   return (
     <div className="alpaca" id="alpacaImage">
       <img src={`../assets/backgrounds/${background}.png`} alt="background" />
