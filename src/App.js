@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 import "./App.css";
-import "./main.css";
 import { data } from "./lib/alpaca";
 import AlpacaImage from "./components/AlpacaImage";
 import ControlMenu from "./components/ControlMenu";
@@ -90,6 +89,7 @@ function App() {
         break;
     }
   };
+  
   const downloadAlpaca = () => {
     const alpacaImage = document.getElementById("alpacaImage");
     toJpeg(alpacaImage, {
