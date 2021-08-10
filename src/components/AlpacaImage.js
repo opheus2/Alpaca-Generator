@@ -3,7 +3,7 @@ export default function AlpacaImage({ config }) {
     config;
   return (
     <div className="alpaca" id="alpacaImage">
-      <img src={`../assets/backgrounds/${background}.png`} alt="background" />
+      <img src={`../assets/backgrounds/${background}.png`} alt="background" width="720" height="720" />
       <img src={`../assets/ears/${ear}.png`} alt="ears" />
       <img src={`../assets/neck/${neck}.png`} alt="neck" />
       <img src={`../assets/leg/${leg}.png`} alt="leg" />

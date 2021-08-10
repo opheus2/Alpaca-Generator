@@ -45,41 +45,45 @@ function App() {
   };
 
   const selectStyle = (data) => {
-    const newActiveSubMenuItems = [...activeSubMenu.items];
 
-    newActiveSubMenuItems.map((alp) => (alp.selected = false));
+    const newActiveSubMenuItems = [...activeSubMenu.items];
+    newActiveSubMenuItems.map((item) => (item.selected = false));
     newActiveSubMenuItems[data.id].selected =
       !newActiveSubMenuItems[data.id].selected;
 
-    const newActiveSubMenu = { ...activeSubMenu };
-    newActiveSubMenu.items = newActiveSubMenuItems;
-    setActiveSubMenu(newActiveSubMenu);
+    setSelection(
+      activeSubMenu.label.toLocaleLowerCase(),
+      data.filename.toLocaleLowerCase()
+    );
+  };
 
-    switch (activeSubMenu.label.toLocaleLowerCase()) {
+  const setSelection = (label, filename) => {
+    switch (label) {
       case "backgrounds":
-        setBackground(data.filename);
+        setBackground(filename);
         break;
       case "ears":
-        setEar(data.filename);
+        setEar(filename);
         break;
       case "eyes":
-        setEyes(data.filename);
+        setEyes(filename);
         break;
       case "neck":
-        setNeck(data.filename);
+        setNeck(filename);
         break;
       case "hair":
-        setHair(data.filename);
+        setHair(filename);
         break;
       case "mouth":
-        setMouth(data.filename);
+        setMouth(filename);
         break;
       case "leg":
-        setLeg(data.filename);
+        setLeg(filename);
         break;
       case "accessories":
-        if (data.label !== "Default") {
-          setAccessory(data.filename);
+        console.log(filename);
+        if (filename !== "default") {
+          setAccessory(filename);
         }
         break;
 
@@ -87,7 +91,6 @@ function App() {
         break;
     }
   };
-
   const downloadAlpaca = () => {
     const alpacaImage = document.getElementById("alpacaImage");
     toJpeg(alpacaImage, {
@@ -98,6 +101,15 @@ function App() {
     });
   };
 
+  const randomizeAlpaca = () => {
+    alpacaData.forEach((alpaca, index) => {
+      const random = (Math.random() * alpaca.items.length) | 0;
+      alpaca.items.map(item => item.selected = false);
+      alpaca.items[random].selected = true;
+      setSelection(alpaca.label.toLocaleLowerCase(), alpaca.items[random].filename);
+    })
+  }
+
   return (
     <div className="container">
       <header>
@@ -106,7 +118,10 @@ function App() {
       <main className="wrapper">
         <div className="placeholder">
           <AlpacaImage config={config} />
-          <OtherControls downloadAlpaca={downloadAlpaca} />
+          <OtherControls
+            randomizeAlpaca={randomizeAlpaca}
+            downloadAlpaca={downloadAlpaca}
+          />
         </div>
         <ControlMenu
           config={alpacaData}

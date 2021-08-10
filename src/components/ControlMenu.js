@@ -9,8 +9,11 @@ export default function ControlMenu({
 }) {
   return (
     <div className="controls">
-      <AccessorizeMenu config={config} onClick={selectMenu} />
-      <StyleMenu activeSubMenu={activeSubMenu} onClick={selectStyle} />
+      <AccessorizeMenu
+        config={config}
+        selectMenu={selectMenu}
+        selectStyle={selectStyle}
+      />
     </div>
   );
 }

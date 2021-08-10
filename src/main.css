@@ -33,7 +33,6 @@ body {
     display: flex;
     justify-content: center;
     font-family: 'Barlow', sans-serif;
-    padding: 3.125rem;
     background: var(--bg-color);
 }
 
@@ -50,44 +49,27 @@ h5 {
 .container {
     display: flex;
     flex-direction: column;
-    gap: 30px;
-    max-width: 80%;
+    gap: 1.875rem;
     margin: 0 auto;
 }
 
 header {
     font-size: 1.625rem;
+    margin-top: 2.5rem;
 }
 
 .wrapper {
     display: flex;
     flex-direction: column;
     gap: 20px;
-}
-
-@media (max-width: 991px) {
-    .wrapper {
-        /* max-width: 500px; */
-    }
-}
-
-@media (min-width: 64rem) {}
-
-@media (min-width: 992px) {
-    .wrapper {
-        flex-direction: row;
-    }
-    .wrapper .placeholder .alpaca img {
-        width: inherit;
-        height: auto;
-        object-fit: contain;
-    }
+    margin-bottom: 2.5rem;
 }
 
 .wrapper .placeholder {
     display: flex;
     flex-direction: column;
     gap: 1.875rem;
+    max-width: 500px;
 }
 
 .wrapper .placeholder .alpaca {
@@ -101,7 +83,7 @@ header {
     position: absolute;
     top: 0;
     left: 0;
-    /* max-width: 500px; */
+    max-width: 500px;
     width: inherit;
     height: auto;
     object-fit: contain;
@@ -252,4 +234,51 @@ button.color {
 
 button.color:hover {
     opacity: 0.9;
+}
+
+@media (max-width: 991px) {
+    .container {
+        padding: 0 3.125rem;
+    }
+    .wrapper {
+        max-width: 500px;
+    }
+}
+
+@media (min-width: 17.5rem) and (max-width: 36rem) {
+    header {
+        max-width: 280px;
+    }
+    .wrapper .placeholder .alpaca {
+        width: 17.5rem;
+        height: 17.5rem;
+    }
+    .wrapper .controls {
+        max-width: 280px;
+    }
+}
+
+@media (max-width: 64rem) {
+    .header {
+        font-size: 1.5rem;
+    }
+    /* .container {
+        max-width: 90vw;
+    } */
+}
+
+@media (min-width: 992px) {
+    .container {
+        max-width: 62.5rem;
+        padding: 0 1.25rem;
+        margin: 0, auto;
+    }
+    .wrapper {
+        flex-direction: row;
+    }
+    .wrapper .placeholder .alpaca img {
+        width: inherit;
+        height: auto;
+        object-fit: contain;
+    }
 }
