@@ -1,8 +1,8 @@
 :root {
-    --bg-color: #DBF6E9;
-    --primary-color: #31326F;
-    --secondary-color: #9DDFD3;
-    --accent-color: #FFC93C;
+    --bg-color: #dbf6e9;
+    --primary-color: #31326f;
+    --secondary-color: #9ddfd3;
+    --accent-color: #ffc93c;
     --blue50: #5596f6;
     --blue60: #2a7bf4;
     --blue70: #2a5ca7;
@@ -25,14 +25,14 @@ html {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Barlow', sans-serif;
+    font-family: "Barlow", sans-serif;
 }
 
 body {
     min-height: 100vh;
     display: flex;
     justify-content: center;
-    font-family: 'Barlow', sans-serif;
+    font-family: "Barlow", sans-serif;
     background: var(--bg-color);
 }
 
@@ -126,14 +126,6 @@ header {
     gap: 1.25rem;
 }
 
-
-/* .items button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 20px;
-} */
-
 button {
     display: flex;
     justify-content: center;
@@ -222,7 +214,6 @@ button.active {
 }
 
 button.coloractive.color {
-    /* border: 2px solid var(--accent-color); */
     border: 2px solid var(--accent-color);
 }
 

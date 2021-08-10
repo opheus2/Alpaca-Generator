@@ -45,7 +45,6 @@ function App() {
   };
 
   const selectStyle = (data) => {
-
     const newActiveSubMenuItems = [...activeSubMenu.items];
     newActiveSubMenuItems.map((item) => (item.selected = false));
     newActiveSubMenuItems[data.id].selected =
@@ -104,11 +103,14 @@ function App() {
   const randomizeAlpaca = () => {
     alpacaData.forEach((alpaca, index) => {
       const random = (Math.random() * alpaca.items.length) | 0;
-      alpaca.items.map(item => item.selected = false);
+      alpaca.items.map((item) => (item.selected = false));
       alpaca.items[random].selected = true;
-      setSelection(alpaca.label.toLocaleLowerCase(), alpaca.items[random].filename);
-    })
-  }
+      setSelection(
+        alpaca.label.toLocaleLowerCase(),
+        alpaca.items[random].filename
+      );
+    });
+  };
 
   return (
     <div className="container">

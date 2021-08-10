@@ -1,5 +1,4 @@
 import AccessorizeMenu from "./AccessorizeMenu";
-import StyleMenu from "./StyleMenu";
 
 export default function ControlMenu({
   config,
